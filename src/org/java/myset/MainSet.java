@@ -17,11 +17,8 @@ public class MainSet {
 		while(NumberList.size() < 5) {
 			
 			int randomNumber = r.nextInt(2, 13);
-			
-			if(!NumberList.contains(randomNumber)) {
 				
 				NumberList.add(randomNumber);
-			}
 		}
 		System.out.println(NumberList);
 	}
