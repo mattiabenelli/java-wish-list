@@ -11,39 +11,33 @@ public class Main {
 		List<String> whishList = new ArrayList<>();
 		
 		Scanner in = new Scanner(System.in);
-		boolean newElem = true;
-		boolean control = true;
+
 		
-		while(newElem == true) {
-			System.out.println("\n--------------------\n");
-			System.out.println("Inserisci elemento wishlist: ");
-			String elem = in.next();
-			
-			whishList.add(elem);
-			
-			System.out.println("\n--------------------\n");
+		while(true) {
+	
 			System.out.println("1- inserisci un nuovo elemento nella wishlist");
 			System.out.println("2- esci");
 			System.out.println("Cosa vuoi fare: ");
 			
-			while(control == true) {
 				int choice = in.nextInt();
 				
-				if (choice == 1) {
-					control = false;
+				if (choice < 1 || choice > 2) {
+					System.out.println("codice non valido");
+					continue;
 				}
 				else if(choice == 2) {
-					control = false;
-					newElem = false;
+					break;
 				}
-				else{
-					System.out.println("formato non valido");
-				}
-			}
+				
+				System.out.println("Inserisci elemento wishlist: ");
+				String elem = in.next();
+				whishList.add(elem);
+
 		}
 		System.out.println("\n--------------------\n");
 		System.out.println("la tua lista di desideri è: ");
 		System.out.println(whishList);
+		System.out.println("ecco il numero dei tuoi desideri: " + whishList.size());
 		
 		in.close();
 	}
